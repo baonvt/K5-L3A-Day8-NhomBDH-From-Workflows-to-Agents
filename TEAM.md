@@ -22,7 +22,7 @@
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Nguyễn Võ Thái Bảo | Workflow + benchmark/crash | cb1cb3f | `src/tests/test_workflow_shape.py` |
+| Nguyễn Võ Thái Bảo | Workflow + benchmark/crash + Lab9 evaluation | cb1cb3f, 19bb28e | `src/tests/test_workflow_shape.py`, `src/tests/test_lab9_trace_regression.py` |
 | Nguyễn Trường Duy | Single ReAct + ADR/research | 67a3a24 | `src/tests/test_single_shape.py` |
 | Đoàn Văn Hiệp | Orchestrator + handoff/trace | bbf1e76 | `src/tests/test_orchestrator_handoff_trace.py` |
 

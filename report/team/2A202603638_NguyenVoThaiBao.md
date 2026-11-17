@@ -35,3 +35,12 @@
 ## 6. Tự đánh giá
 
 Workflow đạt toàn bộ trial public với chi phí mô phỏng thấp nhất trong bốn shape. Cách làm giữ việc tính tiền và ghi ledger ở code/host, giúp flow dễ kiểm tra và tránh tin vào nội dung ticket. Kết quả hiện chỉ phản ánh 14 claim public và MockLLM; cần dựa thêm vào hidden grade trước khi kết luận về dữ liệu ngoài bộ public.
+
+## 7. Bổ sung Lab 9 — evaluation và failure analysis
+
+- **Phần việc:** tích hợp overlay Lab 9 trên nhánh `starter/d09`; hoàn thiện taxonomy FM-01–FM-09, eval set tách nhãn v1/v2, grader tiền/reply, bootstrap, gate, slices và integrity traps; cập nhật Eval Card, PRD v1.1, judge audit và regression trace case.
+- **Commit/test:** `19bb28e`; `src/tests/test_lab9_trace_regression.py` cùng bộ `test_lab9_*`.
+- **Tự kiểm:** `lab9.smoke` PASS; `evalset --check` và `evalset --v2` có 0 problem; student tests 16/16 core + 14/14 advanced; host suite 66 passed. Baseline `E-swarm-20261117-1704`; fixed qua gate; seeded regression bị chặn ở `pass_rate` với Δ −0.271, CI [−0.500, −0.057].
+- **Advanced:** baseline v2 `E-swarm-20261117-1330`; A/A Δ=0; mutation 3/3 với 0 false alarm; bốn trap công khai đều bị gate chặn.
+- **Công cụ AI:** dùng Codex để đọc kỹ README/Markdown, hỗ trợ triển khai grader/statistics/gate và điền tài liệu từ kết quả script. Kết quả được kiểm bằng smoke, pytest, CLI eval/gate và đối chiếu report; JSON report chỉ được sinh bằng script, không sửa tay.
+- **Giới hạn:** MockLLM, 14 public + 14 adversarial item, 5 seed; judge replay public; swarm không ghi event reply nên metric FM-08 không chứng minh độ chính xác văn bản của swarm.
